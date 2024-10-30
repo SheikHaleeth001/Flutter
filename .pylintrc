@@ -1,0 +1,5 @@
+
+[TYPECHECK]
+generated-members=sh
+
+disable=E0401

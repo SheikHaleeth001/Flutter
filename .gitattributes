@@ -1,0 +1,12 @@
+
+database/postgres/gen/* merge=ours
+
+# Set default behavior to automatically normalize line endings.
+* text=auto
+
+*.go -text diff=golang eol=lf
+
+
+# Force bash scripts to always use LF line endings so that if a repo is accessed
+# in Unix via a file share from Windows, the scripts will work.
+*.sh text eol=lf

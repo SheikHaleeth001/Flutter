@@ -1,0 +1,300 @@
+overrides:
+  go:
+    overrides:
+    - db_type: pg_catalog.serial4
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt32
+      nullable: true
+    - db_type: serial4
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt32
+      nullable: true
+    - db_type: pg_catalog.serial8
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt64
+      nullable: true
+    - db_type: bigserial
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt64
+      nullable: true
+    - db_type: pg_catalog.int4
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt32
+      nullable: true
+    - db_type: int4
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt32
+      nullable: true
+    - db_type: integer
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt32
+      nullable: true
+    - db_type: int
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt32
+      nullable: true
+    - db_type: pg_catalog.int8
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt64
+      nullable: true
+    - db_type: int32
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullInt64
+      nullable: true
+    - db_type: pg_catalog.float8
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullFloat64
+      nullable: true
+    - db_type: float8
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullFloat64
+      nullable: true
+    - db_type: pg_catalog.float4
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullFloat64
+      nullable: true
+    - db_type: pg_catalog.numeric
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullString
+      nullable: true
+    - db_type: pg_catalog.bool
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullBool
+      nullable: true
+    - db_type: bool
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullBool
+      nullable: true
+    - db_type: pg_catalog.timestamp
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullTime
+      nullable: true
+    - db_type: pg_catalog.timestamptz
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullTime
+      nullable: true
+    - db_type: timestamptz
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullTime
+      nullable: true
+    - db_type: pg_catalog.time
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullTime
+      nullable: true
+    - db_type: pg_catalog.timetz
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullTime
+      nullable: true
+    - db_type: date
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullTime
+      nullable: true
+    - db_type: pg_catalog.varchar
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullString
+      nullable: true
+    - db_type: text
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullString
+      nullable: true
+    - db_type: string
+      engine: postgresql
+      go_type:
+        import: ZenitusHTML/database
+        package: database
+        pointer: false
+        type: NullString
+      nullable: true
+sql:
+- engine: postgresql
+  gen:
+    go:
+      emit_db_tags: false
+      emit_empty_slices: true
+      emit_exact_table_names: false
+      emit_exported_queries: false
+      emit_interface: true
+      emit_json_tags: true
+      emit_methods_with_db_argument: false
+      emit_params_struct_pointers: false
+      emit_result_struct_pointers: true
+      json_tags_case_style: camel
+      out: database/postgres/tmp
+      output_querier_file_name: contact.querier
+      package: gen
+      sql_package: pgx/v4
+  queries: database/postgres/scripts/contact.sql
+  schema: database/postgres/scripts/dump.sql
+- engine: postgresql
+  gen:
+    go:
+      emit_db_tags: false
+      emit_empty_slices: true
+      emit_exact_table_names: false
+      emit_exported_queries: false
+      emit_interface: true
+      emit_json_tags: true
+      emit_methods_with_db_argument: false
+      emit_params_struct_pointers: false
+      emit_result_struct_pointers: true
+      json_tags_case_style: camel
+      out: database/postgres/tmp
+      output_querier_file_name: department.querier
+      package: gen
+      sql_package: pgx/v4
+  queries: database/postgres/scripts/department.sql
+  schema: database/postgres/scripts/dump.sql
+- engine: postgresql
+  gen:
+    go:
+      emit_db_tags: false
+      emit_empty_slices: true
+      emit_exact_table_names: false
+      emit_exported_queries: false
+      emit_interface: true
+      emit_json_tags: true
+      emit_methods_with_db_argument: false
+      emit_params_struct_pointers: false
+      emit_result_struct_pointers: true
+      json_tags_case_style: camel
+      out: database/postgres/tmp
+      output_querier_file_name: team.querier
+      package: gen
+      sql_package: pgx/v4
+  queries: database/postgres/scripts/team.sql
+  schema: database/postgres/scripts/dump.sql
+- engine: postgresql
+  gen:
+    go:
+      emit_db_tags: false
+      emit_empty_slices: true
+      emit_exact_table_names: false
+      emit_exported_queries: false
+      emit_interface: true
+      emit_json_tags: true
+      emit_methods_with_db_argument: false
+      emit_params_struct_pointers: false
+      emit_result_struct_pointers: true
+      json_tags_case_style: camel
+      out: database/postgres/tmp
+      output_querier_file_name: test.querier
+      package: gen
+      sql_package: pgx/v4
+  queries: database/postgres/scripts/test.sql
+  schema: database/postgres/scripts/dump.sql
+- engine: postgresql
+  gen:
+    go:
+      emit_db_tags: false
+      emit_empty_slices: true
+      emit_exact_table_names: false
+      emit_exported_queries: false
+      emit_interface: true
+      emit_json_tags: true
+      emit_methods_with_db_argument: false
+      emit_params_struct_pointers: false
+      emit_result_struct_pointers: true
+      json_tags_case_style: camel
+      out: database/postgres/tmp
+      output_querier_file_name: user.querier
+      package: gen
+      sql_package: pgx/v4
+  queries: database/postgres/scripts/user.sql
+  schema: database/postgres/scripts/dump.sql
+version: '2'

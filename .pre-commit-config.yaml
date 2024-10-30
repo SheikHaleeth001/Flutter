@@ -1,0 +1,65 @@
+# Pre Commit Hooks - https://pre-commit.com/
+
+# NOTE: Some of these hooks does code formating and terminate with exit code 1.
+#       Please do the git commit again and make it work proper.
+
+# Skip Hooks while commiting to avoid any false positive problems
+# SKIP=flake8 git commit -m "foo"
+
+repos:
+-   repo: https://github.com/radix-ai/auto-smart-commit
+    rev: v1.0.2
+    hooks:
+      - id: auto-smart-commit
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+    -   id: check-yaml
+    -   id: check-json
+    -   id: check-toml
+    -   id: check-xml
+    -   id: detect-private-key
+    -   id: check-merge-conflict
+    -   id: trailing-whitespace
+    -   id: check-shebang-scripts-are-executable
+    -   id: mixed-line-ending
+        args: [--fix, lf]
+    -   id: no-commit-to-branch
+        args: [--branch, master,--branch,development]
+
+
+
+# Sqlfluff will reformat your sql scripts. Please make sure,
+# 1. Your editor does not have any external formater for sql scripts
+# 2. Compare the Diff if sqlfluff fixed code with your past code before pushing
+# https://docs.sqlfluff.com/en/stable/configuration.html
+# -   repo: https://github.com/sqlfluff/sqlfluff
+#     rev: 0.9.0
+#     hooks:
+#     -   id: sqlfluff-fix
+#         # exclude: '^scripts/.+'
+#     -   id: sqlfluff-lint
+#         # exclude: '^scripts/.+'
+
+# -   repo: https://github.com/golangci/golangci-lint
+#     rev: v1.43.0
+#     hooks:
+#     -   id: golangci-lint
+
+-   repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.4.0
+    hooks:
+    -   id: go-mod-tidy
+    -   id: go-fmt
+    -   id: go-vet
+    -   id: go-build
+    -   id: go-unit-tests
+    # -   id: golangci-lint  #enable it once most of the linting issues are already fixed.
+
+# Python Hook
+# -   repo: https://github.com/psf/black
+#     rev: 19.3b0
+#     hooks:
+#     -   id: black
+
